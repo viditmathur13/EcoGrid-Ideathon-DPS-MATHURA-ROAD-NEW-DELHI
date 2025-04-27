@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco - Grid</title> 
+    <link rel="icon" href="Eco-Grid Logo Final.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+    <script src="map.js" defer></script>
+</head>
+
+<audio id="backgroundMusic" autoplay loop muted>
+    <source src="Website Background Video.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const audio = document.getElementById("backgroundMusic");
+
+    function unmuteOnInteraction() {
+      audio.muted = false;
+      audio.volume = 0.4; // Set a fixed volume (0.0 to 1.0)
+      audio.play(); // Ensure it's playing
+      // Remove event listeners after unmuting
+      document.removeEventListener('click', unmuteOnInteraction);
+      document.removeEventListener('keydown', unmuteOnInteraction);
+      document.removeEventListener('mousemove', unmuteOnInteraction);
+      document.removeEventListener('touchstart', unmuteOnInteraction);
+    }
+
+    // Listen for any user interaction
+    document.addEventListener('click', unmuteOnInteraction);
+    document.addEventListener('keydown', unmuteOnInteraction);
+    document.addEventListener('mousemove', unmuteOnInteraction);
+    document.addEventListener('touchstart', unmuteOnInteraction);
+  </script>
+
+
+<body bgcolor="black">
+    <!-- CURSOR -->
+    <div class="cursor"></div>
+    <div class="cursor-blur"></div>
+     
+    
+    <div class="section1">
+        <div class="one container">
+            <div class="header">
+              <!-- <h2><img src="Next Earth Mars Logo Final.jpg" style="max-width: 100px;" alt=""></h2> -->
+                <div class="dropdown">
+                    <div class="select">
+                        <span class="selected"><i class="fa-solid fa-bars"></i></span>
+                        <div class="caret"></div>
+                    </div>
+                    <ul class="dropmenu">
+                        <li><a href="./" class="menu-link">Home</a></li>
+                        <li><a href="#section2" class="menu-link">Promo Video</a></li>
+                        <li><a href="#section3" class="menu-link">About Us</a></li>
+                        <li><a href="#section4" class="menu-link">Marine Life Tracker</a></li>
+                        <li><a href="#surge">Tidal Surge</a></li>
+                        <li><a href="#lens">Tidal Lens</a></li>
+                        <li><a href="#contact" class="contact-link">Contact Us(under dev)</a></li>
+                    </ul>
+                </div>
+                <!-- <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul> -->
+            </div>
+
+            <div class="text-content">
+                <div class="head">
+                    <h2><img src="Eco Grid logo final 1.png" id="Logo" style="max-width: 300px;" alt=""></h2>
+                    <br><br>
+                    <h2 style="color: yellow; font-size: 38px; font-weight: bolder"><span style="color: yellow ; font-size: 38px; font-weight: bolder;">  "Powering the future of data </span> - <span style="color: yellow; font-size: 38px; font-weight: bolder;"> Sustainably"</span></h2>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+
+        <video src="Home 1.mp4" muted autoplay loop defaultPlaybackRate="0.2" id="earthVid"></video>
+    </div>
+ 
+    
+
+    <br><br><br><br><br><br>
+
+    <div class="section5" id="contact" style="margin-top: -5%; margin-bottom: 0%;">
+        <div class="five container" style="display: flex; align-items: center; justify-content: center; gap: 5%; flex-wrap: wrap;">
+    
+            <!-- Left side: Image -->
+            <div class="left" style="flex: 1.3; min-width: 300px;">
+                <img src="photo about us.jpg" style="height: auto; width: 100%; object-fit: cover; border-radius: 10px;">
+            </div>
+    
+            <!-- Right side: Text -->
+            <div class="right" style="flex: 1; min-width: 300px;">
+                <h3 id="B" style="margin-top: 10%;"> <b style="color: orange;">About Us</b></h3><br>
+                <div class="one" style="top: -10%;">
+                    <h1 id="slide-in" style="text-align: justify;">
+                        At <b style="text-decoration: underline; color: orange;">EcoGrid</b> , we're redefining digital infrastructure for a greener planet.  We deliver next-gen infrastructure, smart energy solutions, and green technologies for the world’s most efficient data centers. We aim at transforming data centers from energy guzzler to source of sustainable energy.
+                    </h1>
+                </div>
+            </div>
+    
+        </div>
+    </div> <hr class="neon-hr"> 
+    
+
+
+
+        </div>
+    </div>
+
+
+    <div class="section5" id="contact" style="margin-top: 10%; margin-bottom: 10%;">
+        <div class="five container" style="display: flex; align-items: center; justify-content: center; gap: 5%; flex-wrap: wrap;">
+    
+            <!-- Left side: Text -->
+            <div class="left" style="flex: 1; min-width: 300px;">
+                <h3 id="B" style="margin-top: 10%;"><b style="color: orange;">Why it matters?</b></h3><br>
+                <div class="one" style="top: 0%;">
+                    <h1 id="slide-in" style="text-align: justify;">
+                        Data centers consume about 1-2% of global electricity—and that number is growing. 
+                        We believe tech should scale smart, not just fast. 
+                        That’s why we design products and services that lower carbon footprints, 
+                        optimize thermal performance, and leverage renewable energy.
+                    </h1>
+                </div>
+            </div>
+    
+            <!-- Right side: Image -->
+            <div class="right" style="flex: 1.3; min-width: 300px;">
+                <img src="why it matters pic.png" style="height: auto; width: 100%; object-fit: cover; border-radius: 10px;">
+            </div>
+    
+        </div>
+    </div> <hr class="neon-hr">
+
+    
+    
+    <h3 id="B" style="margin-top: 10%; text-align: center;"> <b style="color: orange;">Our Solution</b></h3><br>
+    <div class="section" style="margin-top: 5%; margin-bottom: 10%; display: flex; justify-content: center;">
+        
+        <div class="container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1200px;">
+      
+          <!-- Column 1 -->
+          <div style="background-color: #f2f0f5; padding: 30px; border-radius: 15px; flex: 1; min-width: 250px; min-height: 550px;">
+            <h3 style="text-align: center; color: #5A6D8B; font-size: 24px;">SUSTAINABLE SERVER HARDWARE</h3>
+            <div style="background-color: #916bbf; color: white; padding: 20px; margin-top: 20px; border-radius: 10px; text-align: center; min-height: 100px;">
+              Blade-type servers optimized for low power draw and high density
+            </div>
+            <div style="background-color: #916bbf; color: white; padding: 20px; margin-top: 15px; border-radius: 10px; text-align: center; min-height: 100px;">
+              Smart thermal design to reduce cooling loads
+            </div>
+            <div style="background-color: #916bbf; color: white; padding: 20px; margin-top: 15px; border-radius: 10px; text-align: center; min-height: 100px;">
+              Modular, recyclable materials
+            </div>
+          </div>
+      
+          <!-- Column 2 -->
+          <div style="background-color: #f2f0f5; padding: 30px; border-radius: 15px; flex: 1; min-width: 250px; min-height: 550px;">
+            <h3 style="text-align: center; color: #5A6D8B; font-size: 24px;">ENERGY-EFFICIENT INFRASTRUCTURE</h3>
+            <div style="background-color: #5669b7; color: white; padding: 20px; margin-top: 20px; border-radius: 10px; text-align: center; min-height: 100px;">
+              Intelligent cooling systems (liquid + airflow)
+            </div>
+            <div style="background-color: #5669b7; color: white; padding: 20px; margin-top: 15px; border-radius: 10px; text-align: center; min-height: 100px;">
+              Power usage effectiveness (PUE) optimization
+            </div>
+            <div style="background-color: #5669b7; color: white; padding: 20px; margin-top: 15px; border-radius: 10px; text-align: center; min-height: 100px;">
+              Rack and enclosure designs that cut waste and improve airflow
+            </div>
+          </div>
+      
+          <!-- Column 3 -->
+          <div style="background-color: #f2f0f5; padding: 30px; border-radius: 15px; flex: 1; min-width: 250px; min-height: 550px;">
+            <h3 style="text-align: center; color: #5A6D8B; font-size: 24px;">GREEN POWER INTEGRATION</h3>
+            <div style="background-color: #4c87b9; color: white; padding: 20px; margin-top: 20px; border-radius: 10px; text-align: center; min-height: 100px;">
+              Renewable energy sourcing consultation
+            </div>
+            <div style="background-color: #4c87b9; color: white; padding: 20px; margin-top: 15px; border-radius: 10px; text-align: center; min-height: 100px;">
+              On-site solar and battery storage design
+            </div>
+            <div style="background-color: #4c87b9; color: white; padding: 20px; margin-top: 15px; border-radius: 10px; text-align: center; min-height: 100px;">
+              Smart load balancing for hybrid grids
+            </div>
+          </div>
+      
+          <!-- Column 4 -->
+          <div style="background-color: #f2f0f5; padding: 30px; border-radius: 15px; flex: 1; min-width: 250px; min-height: 550px;">
+            <h3 style="text-align: center; color: #5A6D8B; font-size: 24px;">SMART DATA CLEANUP WITH AI</h3>
+            <div style="background-color: #39accf; color: white; padding: 20px; margin-top: 20px; border-radius: 10px; text-align: center; min-height: 100px;">
+              AI-driven solutions for Data Centers for intelligent data cleanup and optimization
+            </div>
+            <div style="background-color: #39accf; color: white; padding: 20px; margin-top: 15px; border-radius: 10px; text-align: center; min-height: 100px;">
+              Algorithm building using generative AI to identify & eliminate duplicate & erroneous data
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      
+      <hr class="neon-hr">
+
+    <div class="section5" id="contact" style=" margin-top: 30%; margin-bottom: 20%;">
+        <div class="five container">
+
+            <div class="right">
+
+
+                <h3 id="B"  style="margin-top: 0%;"> <b style="color: orange;">Featured Products</b></h3><br>
+                <div class="one" style="top: -10%;">
+                    <h1>
+                      <ol>
+                        <li> <b style="color: orange; font-size: larger; text-decoration: underline;">ECOBLADE™ SERVER SERIES - </b>
+                          </li> <li><i style="font-family: Georgia, 'Times New Roman', Times, serif;">"Built for Performance. Engineered for Sustainability."</i></li><br> <li>  We offer Ultra-efficient blade servers built for high rate of performance with enhanced storage capacities and minimal environmental impact. </li><br>
+                          <li> <b style="color: orange;" > Ultra-Efficient Blade Servers for Sustainable Scale </b> </li>
+                          <img src="Blade server" style="height: 250px; width: 250px; margin-right: 10%; float: right;"><br>
+                          <li style="font-size: x-large;"> <b style="color: orange;">→</b> Low-power, high-density compute nodes </li>
+                          <li style="font-size: x-large;"> <b style="color: orange;">→</b> Smart thermal architecture for reduced cooling needs </li>
+                          <li style="font-size: x-large;"> <b style="color: orange;">→</b> Recyclable and modular design </li>
+                          <li style="font-size: x-large;"> <b style="color: orange;">→</b> Ideal for edge, hyperscale, and hybrid data centers </li>
+                          <li style="font-size: x-large;"> <b style="color: orange;">→</b> Solid State Storage for better energy efficiency for same throughout </li>                          
+                          <li style="font-size: x-large;"> <b style="color: orange;">→</b> High efficiency Server Processor & chips </li><br>
+                          <br>
+                         <li style="font-size: medium; text-align: right;"> <b style="color: orange;">◆</b> Energy use reduction: Upto 30% </li>
+                          <li style="font-size:medium; text-align: right;"> <b style="color: orange;">◆</b> Rack Ready, Tool-free Instalation </li>
+                      </ul> 
+                      </ol><br>
+                      
+
+                </div>  
+                
+
+                <div class="one" style="top: -10%;">
+                    <h1>
+                      <ol>
+                        <li> <b style="color: orange; font-size: larger; text-decoration: underline;">SMARTCOOL™ RACK SYSTEMS- </b> <img src="Smartcool img.png" style="height: 400px; width: 900px; float: right;"><br>
+                         <br> </li> <li>  Next-Gen Cooling Racks That Think Smarter </li><br>
+                                                    
+                          <li style="font-size: x-large;"> <b style="color: orange;">→</b> Intelligent airflow management </li><br>
+                          <li style="font-size: x-large;"> <b style="color: orange;">→</b> Built-in sensors for adaptive cooling </li><br>
+                          <li style="font-size: x-large;"> <b style="color: orange;">→</b> Supports liquid and hybrid cooling systems </li><br>
+                          <li style="font-size: x-large;"> <b style="color: orange;">→</b> Designed for hot/cold aisle containment setups </li>                         
+                         <br>
+                      <li style="font-size:medium; text-align: right;"> <b style="color: orange;">◆</b>  Cooling Efficiency Gains: 20–40%
+                        </li>
+                          <li style="font-size:medium; text-align: right;"> <b style="color: orange;">◆</b> Real-time monitoring via EcoGrid Dashboard
+                          </li>
+                      </ul> 
+                      </ol><br>
+                      
+
+                </div>
+
+            </div>
+
+        </div>
+    </div><hr class="neon-hr">
+
+    <div class="section5" id="contact" style=" margin-top: 80%; margin-bottom: 80%;">
+        <div class="five container">
+
+            <div class="right">
+
+
+                <h3 id="B" style="margin-top: 0%;"> <b style="color: orange;">ECOGRID - Consulting Services</b></h3>
+                <h1><i style="font-family: cursive;">Expert Guidance for Energy Efficient, Smarter and Green Data Centers</i></h1><br><br>
+                <div class="one" style="top: -10%;">
+                    <h1>
+                       <b style="color: orange;"> "Sustainability Isn’t Just a Goal—It’s a Strategy." </b><br>
+                       Our consulting team helps you reduce emissions, cut operational costs, and future-proof your infrastructure.<br><br>
+                       <ol>
+                      <li> <b style="color: orange; font-size: larger;">What We Offer - </b></li><BR>
+                       <li><b style="color: orange; text-decoration: underline;"> SUSTAINABLE INFRASTRUCTURE DESIGNING - </b></li><br>
+                       <img src="Sustainable infrastructure designing pic.png" style="height: 400px; width: 50%; float: right;">
+                       <li> Design smarter from the ground up—OR upgrade what you’ve got. </li><br>
+                       <li style="font-size: x-large;"> <b style="color: orange;">→</b> Green facility layout & airflow modelling using Liquid Cooling & Geothermal Cooling techniques </li><br>
+                       <li style="font-size: x-large;"> <b style="color: orange;">→</b> Rack density planning & energy zoning </li><br>
+                       <li style="font-size: x-large;"> <b style="color: orange;">→</b> End-to-end sustainable infrastructure roadmapping </li><br>
+                       <li style="font-size: x-large;"> <b style="color: orange;">🛠</b> Ideal for both retrofits & new builds </li><br>
+                       
+                       <br><br><br><br>
+                       <li><b style="color: orange; text-decoration: underline;"> RENEWABLE INTEGRATION CONSULTING - </b></li><br>
+                       <img src="Renewable Integration Consulting.jpg" style="height: 400px; width: 50%; float: right;"><br>
+                       <li> Bridge your facility to the future of clean energy. </li><br>
+                       <li style="font-size: x-large;"> <b style="color: orange;">→</b> Feasibility studies for use of solar and wind energy  </li>
+                       <li style="font-size: x-large;"> <b style="color: orange;">→</b>  High efficiency battery storage systems </li>
+                       <li style="font-size: x-large;"> <b style="color: orange;">→</b> Power grid load balancing models </li>
+                       <li style="font-size: x-large;"> <b style="color: orange;">→</b> Hybrid and off-grid solutions  </li><br><BR><br><br><br><br><br><br>
+                        <li><b style="color: orange; text-decoration: underline;"> SMART DATA CLEANUP WITH AI - </b></li><br> 
+                        <img src="Generative-AI- pic.webp" style="height: 400px; width: 50%; float: right;"><br>
+                        <li>At EcoGrid, we use Generative AI to build intelligent algorithms that eliminate duplicates, minimize redundancies, and correct errors at scale. Our AI-driven solutions deliver cleaner, more reliable datasets, boosting system performance, storage efficiency, and decision-making across the infrastructure. By enhancing data quality at its core, we drive smarter operations and greater sustainability in digital ecosystems. </li> <BR><br><br><br><br>
+                    <li><b style="color: orange; text-decoration: underline;"> WASTE HEAT RECOVERY & UTILISATION ANALYSIS - </b></li><br>
+                    <img src="heat recovery image.png" style="height: 400px; width: 50%; float: right;"><br>
+                    <li> Capture and reuse waste heat to boost data center efficiency and benefit local communities. </li><br>
+                    <li style="font-size: x-large;"> <b style="color: orange;">→</b> Integration with hot water ditribution system - For cleaning, laundry and potable use . 
+                    </li><br>
+                    <li style="font-size: x-large;"> <b style="color: orange;">→</b> Integration with ditrict heating networks in cold areas </li><br>
+                    <li style="font-size: x-large;"> <b style="color: orange;">→</b> Utilisation in Commercial/ residential buildings for space Heating </li>
+                       
+                       </ol>
+                    </h1>
+                
+                </div>                
+            </div>
+
+        </div>
+    </div><hr class="neon-hr">
+
+    <div class="section5" id="contact" style=" margin-top: 0%; margin-bottom: 0%;">
+        <div class="five container">
+
+            <div class="right">
+
+
+                <h3  id="B" style="margin-top: 0%;" > <b style="color: orange;">Why Choose EcoGrid ?</b></h3><br>
+                <div class="one" style="top: -10%;">
+                    <h1>
+                       <ol>
+                        <li style="font-size: x-large;"> <b style="color: orange;">→ Trusted by industry leaders - </b> EcoGrid is trusted by industry leaders for pioneering sustainable infrastructure and future-ready solutions. Our expertise, transparency, and commitment to a regenerative future make us the partner of choice worldwide. </li><br>
+                        <li style="font-size: x-large;"> <b style="color: orange;">→ Cutting-edge sustainable solutions - </b> EcoGrid delivers cutting-edge sustainable solutions that blend innovation with environmental stewardship. We empower industries to achieve efficiency, resilience, and growth while minimizing their ecological footprint for a thriving future. </li><br>
+                        <li style="font-size: x-large;"> <b style="color: orange;">→ Personalized service tailored to your needs - </b> At EcoGrid, we believe every challenge is unique. That’s why we offer personalized service, carefully tailored to your needs, ensuring customized, sustainable solutions that drive real results and lasting growth. </li>
+                       </ol>
+                    </h1>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div> <hr class="neon-hr">
+
+    <div class="section5" id="contact" style=" margin-top: 5%; margin-bottom: 10%;">
+        <div class="five container">
+
+            <div class="right">
+
+
+                <h3  id="B" style="margin-top: 0%;" > <b style="color: orange;">Research</b></h3><br>
+                <img src="Reseach img.jpeg" style="height: 400px; width: 50%; float: right;"><br>
+                <li style="font-size: x-large;"><b>Our team of experts, in collaboration with marine specialists, is developing <b style="color: orange;"> UNDERWATER DATA CENTERS </b>. This project explores the feasibility of submerging data centers and evaluates their potential for energy efficiency and sustainability. Initial results show improved performance and reliability, as underwater deployment offers several key advantages:</b></li><br>
+                <div class="one" style="top: -10%;">
+                    <h1>
+                       <ol>
+                        <li style="font-size: x-large;"> <b style="color: orange; font-size: xx-large;">→ Enhanced cooling - </b> The naturally cold ocean environment efficiently cools the servers, reducing the need for traditional energy-intensive cooling systems. </li><br>
+                        <li style="font-size: x-large;"> <b style="color: orange; font-size: xx-large;">→ Greater reliability  - </b>  Being submerged protects the infrastructure from dust, temperature fluctuations, and human interference. </li><br>
+                        <li style="font-size: x-large;"> <b style="color: orange; font-size: xx-large;">→  Faster deployment  - </b> Modular designs can be quickly assembled and positioned near coastal urban centers, minimizing latency. </li>
+                       </ol>
+                    </h1>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div> <hr class="neon-hr">
+   
+    <h1 class="team" style="font-size: 100px; margin-left: 35%; margin-top: 5%; margin-bottom: -5%;">Our Team</h1><br><br><br><br>
+
+    
+
+    <div>
+        <h2 style="text-align: justify; margin: 5%; font-size: 30px;"> At EcoGrid, our team is the heart of everything we do. Made up of passionate innovators, engineers, and sustainability experts, we work relentlessly to push boundaries and deliver transformative solutions. Every project we take on is fueled by deep collaboration, tireless dedication, and a shared commitment to building a better, greener future. Our team's hard work doesn’t just meet expectations — it sets new industry standards for excellence and impact. </h2> 
+        <div class="card-container" style="margin-top: 0px;">
+            <div class="card" style="margin-left: 65%;">
+                <img src="Vedant.jpg">
+                <div class="card-content">
+                    <h3>Vedant Mathur</h3>
+                    <p>  Data Center Consultant </p>
+                    <!-- <a href="" class="btn">Read More</a> -->
+                </div>
+            </div>
+            <div class="card">
+                <img src="Vidit.jpg">
+                <div class="card-content">
+                    <h3>Vidit Mathur</h3>
+                    <p> Sustainability Expert </p>                    
+                    <!-- <a href="" class="btn">Read More</a> -->
+                </div>
+            </div>   <br>
+                       
+        </div>
+        <br>
+        
+    </div><br>
+    
+     <hr class="neon-hr">
+
+    <br>
+
+    <div class="section2" id="section2">
+        <!-- <video src="./videos/Chaar Diwaari - Thehra (Official Video) ｜ Pyaar Diwaari Arc 1 ｜ Def Jam India (online-video-cutter.com).mp4" loop autoplay id="thehra"></video> -->
+        <video src="ECO GRID PROMO VIDEO_FINAL.mp4" loop autoplay id="thehra"></video>
+    </div> <hr class="neon-hr">
+
+    <div class="section5" id="contact" style="margin-top: 2%; margin-bottom: -5%;">
+        <div class="five container" style="text-align: center;">
+      
+          <div class="right">
+      
+            <h3 id="B" style="margin-top: 10%; margin-bottom: 20px;">
+                <b style="color: orange; font-size: 80px;">Contact us</b>
+              </h3>
+              
+      
+            <style>
+              input, textarea, select {
+                width: 35%;
+                padding: 10px;
+                margin: 10px 0;
+                background: #222;
+                border: 1px solid #0ff;
+                border-radius: 5px;
+                color: #0ff;
+                outline: none;
+              }
+      
+              input::placeholder, textarea::placeholder {
+                color: #0ff;
+                opacity: 0.7;
+              }
+      
+              button {
+                width: 35%;
+                padding: 10px;
+                background: linear-gradient(to right, #00f, #0ff);
+                border: none;
+                border-radius: 5px;
+                color: #000;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.3s;
+              }
+      
+              button:hover {
+                background: linear-gradient(to left, #00f, #0ff);
+                box-shadow: 0 0 10px #0ff, 0 0 20px #00f;
+              }
+      
+              select {
+                background: #111;
+                box-shadow: 0 0 5px #0ff;
+                transition: 0.3s;
+              }
+      
+              select:focus {
+                box-shadow: 0 0 15px #00f, 0 0 25px #0ff;
+              }
+            </style>
+      
+            <div class="one" style="margin-top: 2%;">
+              <h1 style="text-align: center; font-size: 22px; max-width: 800px; margin: auto; margin-bottom: 40px;">
+                We value your thoughts and are always here to assist with any questions, feedback, or needs you
+                may have. If you'd like to connect, simply use the form below. We'll
+                ensure your inquiry is directed to the right expert.
+              </h1>
+      
+              <form action="https://formsubmit.co/vidit.mathur13@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Full name" required><br>
+                <input type="email" name="email" placeholder="Email address" required><br>
+                <input type="text" name="company" placeholder="Company name" required><br>
+                <input type="number" name="phone" placeholder="Phone number"><br>
+                <select name="service" required>
+                    <option value="">How can we help?</option>
+                    <option value="Inquiry">Inquiry about EcoGrid Products</option>
+                    <option value="Consultation">Request a Consultation</option>
+                    <option value="Consulting">Renewable Integration Consulting</option>
+                    <option value="Questions">General Questions</option>
+                </select><br>
+                <textarea name="message" rows="4" placeholder="Tell us how we can assist you" required></textarea><br>
+                <button type="submit"><b>Send</b></button>
+            </form>
+      
+              <br><br>
+              <h4 style="text-align: center;">
+                <span style="font-weight: bolder; color: #00c0f9;">&copy; 2025 EcoGrid. All rights reserved.</span>
+              </h4>
+              <br><br>
+      
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      
+      
+
+
+
+    <script>
+        // import Shery from "sheryjs"; /*Don't use if using CDN*/
+        // Shery.imageEffect(".sideimg", {
+        //     style: 1 /*OR 5 for different variant */,
+        //     debug: true,
+        // });
+    </script>
+    <script src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <!--  Gsap is needed for Basic Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Scroll Trigger is needed for Scroll Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js is needed for 3d Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+
+    <!-- ControlKit is needed for Debug Panel -->
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/CSSRulePlugin.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
